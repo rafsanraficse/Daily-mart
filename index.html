@@ -59,13 +59,7 @@
         <div><div class="eyebrow">THE EVERYDAY EDIT</div><h2>Shop the <em>good stuff.</em></h2></div>
         <p>From pantry basics to little home comforts, stock up on the things that keep life moving.</p>
       </div>
-      <div class="category-row" id="categoryRow" aria-label="Product categories">
-        <button class="category-chip active" data-category="All">All essentials <span>↗</span></button>
-        <button class="category-chip" data-category="Groceries">🥬 Groceries</button>
-        <button class="category-chip" data-category="Personal care">🧴 Personal care</button>
-        <button class="category-chip" data-category="Home care">🧹 Home care</button>
-        <button class="category-chip" data-category="Snacks">🍪 Snacks</button>
-      </div>
+      <div class="category-row" id="categoryRow" aria-label="Product categories"></div>
       <div class="product-toolbar"><span id="resultCount">Showing all essentials</span><label>Sort by <select id="sortSelect"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name A–Z</option></select></label></div>
       <div class="product-grid" id="productGrid"></div>
       <div class="empty-state hidden" id="emptyState"><span>⌕</span><h3>No essentials found</h3><p>Try another search or category.</p><button class="secondary-button" id="clearFilters">Clear filters</button></div>
@@ -102,6 +96,7 @@
     </section>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="products.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
