@@ -4,6 +4,7 @@ A responsive, beginner-friendly e-commerce storefront demo using plain HTML, CSS
 
 ## Features
 - Product cards with sample daily essentials and prices in Bangladeshi taka (৳)
+- Click any product card to open a product-details modal with quantity controls
 - Search by product name/category/unit
 - Category filters and sorting
 - Cart drawer with quantity controls, item removal, subtotal and total
@@ -57,6 +58,11 @@ Each product uses clear field names:
 6. Save the file and refresh the browser.
 
 If an image link is missing or fails to load, DailyMart will automatically show a built-in fallback image.
+
+### How product details work
+- Clicking a product card opens a details modal with the same data from `products-data.js`.
+- The modal shows image, name, category, description, and BDT price from the central product list.
+- Changing a product price in `products-data.js` updates product cards, the details modal, and cart calculations together.
 
 ## Publish with GitHub Pages
 1. Create a repository on GitHub named `dailymart`.
