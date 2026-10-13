@@ -10,6 +10,26 @@ A responsive, beginner-friendly e-commerce storefront demo using plain HTML, CSS
 - Checkout form preview with required fields and a clear demo-only notice
 - Responsive layout for phones, tablets, and computers
 - Cart saved in this browser with localStorage
+- Central product catalog in one editable file (`products.js`)
+
+## Edit products in one place
+All catalog items live in `/products.js`.
+
+Each product uses clear field names:
+- `name` (product title)
+- `price` (number in taka)
+- `description` (short text shown on the card)
+- `category` (used for category filters)
+- `image` (image URL)
+
+Optional fields:
+- `unit` (example: `1 kg`, `500 ml`)
+- `badge` (small label on card)
+- `alt` (image accessibility text)
+
+To add a product, copy one product object in `products.js`, paste it, and update values.
+To remove a product, delete that product object.
+To edit a product, change its fields and refresh the page.
 
 ## Run it
 **Easiest:** open `index.html` in a browser.
