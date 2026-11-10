@@ -51,7 +51,7 @@
     <section class="trust-strip" aria-label="Store benefits">
       <div><span class="trust-icon">✳</span><span><b>Everyday essentials</b><small>For your daily routine</small></span></div>
       <div><span class="trust-icon">♡</span><span><b>Thoughtfully selected</b><small>Useful things, no fuss</small></span></div>
-      <div><span class="trust-icon">৳</span><span><b>Prices in taka</b><small>Clear prices, easy totals</small></span></div>
+      <div><span class="trust-icon">✦</span><span><b>Fresh groceries, fair prices</b><small>Shop your daily essentials with confidence</small></span></div>
     </section>
 
     <section class="shop-section" id="shop">
@@ -59,7 +59,13 @@
         <div><div class="eyebrow">THE EVERYDAY EDIT</div><h2>Shop the <em>good stuff.</em></h2></div>
         <p>From pantry basics to little home comforts, stock up on the things that keep life moving.</p>
       </div>
-      <div class="category-row" id="categoryRow" aria-label="Product categories"></div>
+      <div class="category-row" id="categoryRow" aria-label="Product categories">
+        <button class="category-chip active" data-category="All">All Products <span>↗</span></button>
+        <button class="category-chip" data-category="Groceries">🥬 Groceries</button>
+        <button class="category-chip" data-category="Personal care">🧴 Personal care</button>
+        <button class="category-chip" data-category="Home care">🧹 Home care</button>
+        <button class="category-chip" data-category="Snacks">🍪 Snacks</button>
+      </div>
       <div class="product-toolbar"><span id="resultCount">Showing all essentials</span><label>Sort by <select id="sortSelect"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name A–Z</option></select></label></div>
       <div class="product-grid" id="productGrid"></div>
       <div class="empty-state hidden" id="emptyState"><span>⌕</span><h3>No essentials found</h3><p>Try another search or category.</p><button class="secondary-button" id="clearFilters">Clear filters</button></div>
@@ -81,6 +87,27 @@
     <div class="cart-summary hidden" id="cartSummary"><div class="summary-line"><span>Subtotal</span><b id="subtotal">৳0</b></div><div class="summary-line"><span>Delivery estimate</span><span id="delivery">Calculated at checkout</span></div><div class="summary-line total-line"><span>Total</span><b id="cartTotal">৳0</b></div><p class="demo-note">Demo only: no payment will be taken.</p><button class="primary-button checkout-button" id="checkoutButton">Continue to checkout <span>→</span></button></div>
   </aside>
 
+  <div class="product-backdrop" id="productBackdrop">
+    <section class="product-modal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+      <button class="close-button product-close" id="closeProductModal" aria-label="Close product details">×</button>
+      <div class="product-modal-image-wrap"><img id="productModalImage" class="product-modal-image" src="" alt=""></div>
+      <div class="product-modal-content">
+        <div class="product-modal-category" id="productModalCategory"></div>
+        <h2 id="productModalTitle"></h2>
+        <div class="product-modal-price" id="productModalPrice"></div>
+        <p id="productModalDescription"></p>
+        <div class="product-modal-actions">
+          <div class="quantity-picker" aria-label="Choose quantity">
+            <button id="decreaseModalQty" type="button" aria-label="Decrease quantity">−</button>
+            <span id="modalQtyValue">1</span>
+            <button id="increaseModalQty" type="button" aria-label="Increase quantity">+</button>
+          </div>
+          <button class="primary-button" id="addModalToCart" type="button">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <div class="modal-backdrop" id="checkoutBackdrop">
     <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
       <div class="modal-head"><div><div class="eyebrow">ALMOST THERE</div><h2 id="checkoutTitle">Checkout</h2></div><button class="close-button" id="closeCheckout" aria-label="Close checkout">×</button></div>
@@ -96,7 +123,7 @@
     </section>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="products.js"></script>
+  <script src="products-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

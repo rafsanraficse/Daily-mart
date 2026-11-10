@@ -4,33 +4,13 @@ A responsive, beginner-friendly e-commerce storefront demo using plain HTML, CSS
 
 ## Features
 - Product cards with sample daily essentials and prices in Bangladeshi taka (৳)
+- Click any product card to open a product-details modal with quantity controls
 - Search by product name/category/unit
 - Category filters and sorting
 - Cart drawer with quantity controls, item removal, subtotal and total
 - Checkout form preview with required fields and a clear demo-only notice
 - Responsive layout for phones, tablets, and computers
 - Cart saved in this browser with localStorage
-- Central product catalog in one editable file (`products.js`)
-
-## Edit products in one place
-All catalog items live in `/products.js`.
-
-Each product uses clear field names:
-- `name` (product title)
-- `price` (number in taka)
-- `description` (short text shown on the card)
-- `category` (used for category filters)
-- `image` (image URL)
-
-Optional fields:
-- `unit` (example: `1 kg`, `500 ml`)
-- `badge` (small label on card)
-- `alt` (image accessibility text)
-
-To add a product, copy one product object in `products.js`, paste it, and update values.
-To remove a product, delete that product object.
-To edit a product, change its fields and refresh the page.
-
 ## Run it
 **Easiest:** open `index.html` in a browser.
 
@@ -49,9 +29,43 @@ Before selling real products, connect a backend/order database, server-side vali
 
 Product prices and imagery are examples and should be verified/replaced before launch. Product images are loaded from Unsplash URLs and therefore require an internet connection.
 
+## Edit products in one place
+All catalog items now live in:
+
+- `products-data.js`
+
+This is the only file you need to edit for product content.
+
+### Product fields
+Each product uses clear field names:
+
+- `name` (required)
+- `price` (required, number only)
+- `description` (required)
+- `category` (required)
+- `image` (required, image URL)
+- `unit` (optional)
+- `badge` (optional)
+- `alt` (optional image text)
+
+### How to add or change a product
+1. Open `products-data.js`.
+2. Find the `window.DAILYMART_PRODUCTS = [ ... ]` list.
+3. To edit a product, update any field values in that product object.
+4. To add a product, copy one existing object, paste it inside the list, then change its values.
+5. To remove a product, delete that whole object from the list.
+6. Save the file and refresh the browser.
+
+If an image link is missing or fails to load, DailyMart will automatically show a built-in fallback image.
+
+### How product details work
+- Clicking a product card opens a details modal with the same data from `products-data.js`.
+- The modal shows image, name, category, description, and BDT price from the central product list.
+- Changing a product price in `products-data.js` updates product cards, the details modal, and cart calculations together.
+
 ## Publish with GitHub Pages
 1. Create a repository on GitHub named `dailymart`.
-2. Upload `index.html`, `styles.css`, `script.js`, and `README.md` to the repository root.
+2. Upload `index.html`, `styles.css`, `products-data.js`, `script.js`, and `README.md` to the repository root.
 3. Open the repository's **Settings → Pages**.
 4. Under **Build and deployment**, choose **Deploy from a branch**.
 5. Choose branch `main` and folder `/(root)`, then save.
